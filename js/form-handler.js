@@ -8,7 +8,10 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
     method: "POST",
     body: formData
   })
-  .then(response => {
+  .then(response => response.json())  // parse the JSON
+  .then(data => {
+    if (data.result === "success") {
+      // Show thank-you message and redirect
     document.body.innerHTML = `
       <div style="text-align: center; padding-top: 20vh; font-family: Arial;">
         <h1>Thank you!</h1>
