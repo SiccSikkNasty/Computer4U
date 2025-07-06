@@ -3,18 +3,22 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
 
   const form = e.target;
   const formData = new FormData(form);
+  const submitButton = form.querySelector('input[type="submit"]');
 
-  fetch("https://script.google.com/macros/s/AKfycbzkh5ckHMloEaSDX0gmWkDlrfixALwcQkPLsMNJsXN2MIEScSnEUiQM0wLMo-9wzBPw/exec", {
+  // ✅ Disable the submit button
+  submitButton.disabled = true;
+  submitButton.value = "Submitting...";
+
+  fetch("https://script.google.com/macros/s/AKfycbxV2R0Oyb6y20SHeTl-xXT9voj2Th3LsFVrY6DruTT1VfIhD09sU6mAfjkGa_rpsjgIxA/exec", {
     method: "POST",
     body: formData
   })
-  .then(response => response.text()) // 🔧 Always read as text first
+  .then(response => response.text())
   .then(text => {
-    console.log("Raw response:", text); // 🪵 LOG IT for debugging
-
+    console.log("Raw response:", text);
     let data;
     try {
-      data = JSON.parse(text); // ✅ Safely try parsing JSON
+      data = JSON.parse(text);
     } catch (err) {
       throw new Error("Response is not valid JSON");
     }
@@ -28,8 +32,8 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
         </div>
       `;
       setTimeout(() => {
-        window.location.href = "https://computer4u.ca/contact-page";
-      }, 2000);
+        window.location.href = "https://computer4u.ca";
+      }, 3000);
     } else {
       throw new Error("Server returned non-success result");
     }
@@ -37,5 +41,8 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
   .catch(error => {
     alert("Submission failed. Please try again.");
     console.error("Fetch error:", error);
+    // ✅ Re-enable button if it fails
+    submitButton.disabled = false;
+    submitButton.value = "Submit";
   });
 });
