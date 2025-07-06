@@ -4,7 +4,7 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
   const form = e.target;
   const formData = new FormData(form);
 
-  fetch("https://script.google.com/macros/s/AKfycbxV2R0Oyb6y20SHeTl-xXT9voj2Th3LsFVrY6DruTT1VfIhD09sU6mAfjkGa_rpsjgIxA/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzkh5ckHMloEaSDX0gmWkDlrfixALwcQkPLsMNJsXN2MIEScSnEUiQM0wLMo-9wzBPw/exec", {
     method: "POST",
     body: formData
   })
