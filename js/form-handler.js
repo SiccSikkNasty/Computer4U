@@ -12,16 +12,19 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
   .then(data => {
     if (data.result === "success") {
       // Show thank-you message and redirect
-    document.body.innerHTML = `
-      <div style="text-align: center; padding-top: 20vh; font-family: Arial;">
-        <h1>Thank you!</h1>
-        <p>Your form has been submitted.</p>
-        <p>Redirecting...</p>
-      </div>
-    `;
-    setTimeout(() => {
-      window.location.href = "computer4u.ca";
-    }, 3000);
+      document.body.innerHTML = `
+        <div style="text-align: center; padding-top: 20vh; font-family: Arial;">
+          <h1>Thank you!</h1>
+          <p>Your form has been submitted.</p>
+          <p>Redirecting...</p>
+        </div>
+      `;
+      setTimeout(() => {
+        window.location.href = "https://computer4u.ca";
+      }, 3000);
+    } else {
+      throw new Error("Server did not return success.");
+    }
   })
   .catch(error => {
     alert("Submission failed. Please try again.");
