@@ -32,7 +32,7 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
         </div>
       `;
       setTimeout(() => {
-        window.location.href = "https://computer4u.ca";
+        window.location.href = "https://computer4u.ca/contact-page";
       }, 3000);
     } else {
       throw new Error("Server returned non-success result");
