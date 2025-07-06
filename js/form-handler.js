@@ -28,8 +28,8 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
         </div>
       `;
       setTimeout(() => {
-        window.location.href = "https://computer4u.ca";
-      }, 3000);
+        window.location.href = "https://computer4u.ca/contact-page";
+      }, 2000);
     } else {
       throw new Error("Server returned non-success result");
     }
