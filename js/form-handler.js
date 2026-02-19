@@ -4,7 +4,7 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
   const form = e.target;
   const formData = new FormData(form);
   
-  const captcha = formData.get("g-recaptcha-response");
+const captcha = formData.get("g-recaptcha-response");
 if (!captcha) {
   alert("Please complete the reCAPTCHA.");
   return;
