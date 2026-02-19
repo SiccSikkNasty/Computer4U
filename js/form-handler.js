@@ -10,7 +10,7 @@ if (!captcha) {
   return;
 }
 
-  fetch("https://script.google.com/macros/s/AKfycbyOMGOTWF_CO20B9GqeYRxG44_eo68tdqecrW0Bb7-6cP_y86UDZDt5vXmkqBGGXlypSw/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbyH71i7i7rVU9WmJfOLLBmL8Fxk7Vk3eSmFe0QJINfLtnbveIMeuLeVk5ChlpbTTAdQBA/exec", {
     method: "POST",
     body: formData
   })
